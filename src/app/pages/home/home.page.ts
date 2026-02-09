@@ -31,6 +31,7 @@ import { CategoryService } from 'src/app/services/categories/categories.service'
 import { ProductService } from 'src/app/services/product/product.service';
 import { Product } from 'src/app/interfaces/products.interface';
 import { CategoriesComponent } from 'src/app/components/categories/categories.component';
+import { ProductListHorizontalComponent } from 'src/app/components/product-list-horizontal/product-list-horizontal.component';
 
 @Component({
   selector: 'app-home',
@@ -54,6 +55,7 @@ import { CategoriesComponent } from 'src/app/components/categories/categories.co
     ListHeadingComponent,
     BannerComponent,
     CategoriesComponent,
+    ProductListHorizontalComponent,
   ],
 })
 export class HomePage implements OnInit {
