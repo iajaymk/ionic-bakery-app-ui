@@ -22,6 +22,8 @@ import {
   notifications,
   options,
 } from 'ionicons/icons';
+import { ListHeadingComponent } from 'src/app/components/list-heading/list-heading.component';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 @Component({
   selector: 'app-home',
@@ -42,6 +44,8 @@ import {
     IonRow,
     IonCol,
     IonSearchbar,
+    ListHeadingComponent,
+    BannerComponent,
   ],
 })
 export class HomePage implements OnInit {
