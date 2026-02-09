@@ -46,5 +46,12 @@
   <div class="container">
     <app-list-heading heading="Special Offers"></app-list-heading>
     <app-banner [bannerImages]="banners()"></app-banner>
+
+    @if(categories().length > 0) {
+
+    <app-list-heading heading="Categories"></app-list-heading>
+    <app-categories [categories]="categories()"></app-categories>
+
+    }
   </div>
 </ion-content>

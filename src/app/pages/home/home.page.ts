@@ -26,6 +26,11 @@ import { ListHeadingComponent } from 'src/app/components/list-heading/list-headi
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { Banner } from 'src/app/interfaces/banner.interface';
 import { BannerService } from 'src/app/services/banner/banner.service';
+import { Category } from 'src/app/interfaces/categories.interface';
+import { CategoryService } from 'src/app/services/categories/categories.service';
+import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from 'src/app/interfaces/products.interface';
+import { CategoriesComponent } from 'src/app/components/categories/categories.component';
 
 @Component({
   selector: 'app-home',
@@ -48,12 +53,17 @@ import { BannerService } from 'src/app/services/banner/banner.service';
     IonSearchbar,
     ListHeadingComponent,
     BannerComponent,
+    CategoriesComponent,
   ],
 })
 export class HomePage implements OnInit {
   banners = computed<Banner[]>(() => this.bannerService.getBanners());
+  categories = computed<Category[]>(() => this.categoryService.getCategories());
+  products = computed<Product[]>(() => this.productService.getProducts());
 
   private bannerService = inject(BannerService);
+  private categoryService = inject(CategoryService);
+  private productService = inject(ProductService);
 
   constructor() {
     addIcons({
