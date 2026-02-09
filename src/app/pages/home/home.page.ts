@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -24,6 +24,8 @@ import {
 } from 'ionicons/icons';
 import { ListHeadingComponent } from 'src/app/components/list-heading/list-heading.component';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
+import { Banner } from 'src/app/interfaces/banner.interface';
+import { BannerService } from 'src/app/services/banner/banner.service';
 
 @Component({
   selector: 'app-home',
@@ -49,6 +51,10 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
   ],
 })
 export class HomePage implements OnInit {
+  banners = computed<Banner[]>(() => this.bannerService.getBanners());
+
+  private bannerService = inject(BannerService);
+
   constructor() {
     addIcons({
       location,
